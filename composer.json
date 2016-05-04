@@ -1,0 +1,33 @@
+{
+  "name": "flipbox/relay",
+  "description": "Relay",
+  "version": "1.0.0",
+  "keywords": [
+    "relay",
+    "flipbox",
+    "psr-7"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Flipbox Factory",
+      "email": "hello@flipboxfactory.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "flipbox/skeleton": "~1.0.0",
+    "relay/relay": "~1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Flipbox\\Relay\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/FlipboxFactory/Skeleton.git"
+    }
+  ]
+}

@@ -49,10 +49,6 @@
     {
       "type": "composer",
       "url": "https://packagist.org"
-    },
-    {
-      "type": "path",
-      "url": "../Skeleton"
     }
   ]
 }

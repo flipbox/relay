@@ -23,8 +23,11 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
 
     use AutoLoggerTrait;
 
-    public function __invoke(RequestInterface $request, ResponseInterface $response, callable $next = null)
-    {
+    public function __invoke(
+        RequestInterface $request,
+        ResponseInterface $response,
+        callable $next = null
+    ) {
         // Log
         $this->debug(
             sprintf(

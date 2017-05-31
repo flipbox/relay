@@ -39,9 +39,7 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
     protected function isResponseSuccessful(ResponseInterface $response)
     {
         if (in_array($response->getStatusCode(), [200, 201, 204])) {
-
             return true;
-
         }
 
         $this->getLogger()->warning(

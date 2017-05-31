@@ -23,21 +23,13 @@ class RelayHelper
      */
     public static function createResolver()
     {
-
         return function ($config) {
-
             if ($config instanceof MiddlewareInterface) {
-
                 return $config;
-
             }
-
             return ObjectHelper::create(
                 $config, MiddlewareInterface::class
             );
-
         };
-
     }
-
 }

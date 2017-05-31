@@ -1,15 +1,9 @@
 <?php
 
 /**
- * Abstract Middleware
- *
- * @package    Relay
- * @author     Flipbox Factory <hello@flipboxfactory.com>
- * @copyright  2010-2016 Flipbox Digital Limited
- * @license    https://github.com/FlipboxFactory/Relay/blob/master/LICENSE
- * @version    Release: 1.0.0
- * @link       https://github.com/FlipboxFactory/Relay
- * @since      Class available since Release 1.0.0
+ * @copyright  Copyright (c) Flipbox Digital Limited
+ * @license    https://github.com/flipbox/relay/blob/master/LICENSE
+ * @link       https://github.com/flipbox/relay
  */
 
 namespace Flipbox\Relay\Middleware;
@@ -20,6 +14,10 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Relay\MiddlewareInterface;
 
+/**
+ * @author Flipbox Factory <hello@flipboxfactory.com>
+ * @since 2.0.0
+ */
 abstract class AbstractMiddleware extends AbstractObject implements MiddlewareInterface
 {
 
@@ -27,13 +25,11 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
 
     public function __invoke(RequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-
         // Log
         $this->debug(
             sprintf("Begin '%s' Middleware", get_class($this)
             )
         );
-
     }
 
     /**
@@ -42,7 +38,6 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
      */
     protected function isResponseSuccessful(ResponseInterface $response)
     {
-
         if (in_array($response->getStatusCode(), [200, 201, 204])) {
 
             return true;
@@ -58,7 +53,5 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
         );
 
         return false;
-
     }
-
 }

@@ -1,15 +1,9 @@
 <?php
 
 /**
- * Relay Helper
- *
- * @package    Relay
- * @author     Flipbox Factory <hello@flipboxfactory.com>
- * @copyright  2010-2016 Flipbox Digital Limited
- * @license    https://github.com/FlipboxFactory/Relay/blob/master/LICENSE
- * @version    Release: 1.0.0
- * @link       https://github.com/FlipboxFactory/Relay
- * @since      Class available since Release 1.0.0
+ * @copyright  Copyright (c) Flipbox Digital Limited
+ * @license    https://github.com/flipbox/relay/blob/master/LICENSE
+ * @link       https://github.com/flipbox/relay
  */
 
 namespace Flipbox\Relay\Helpers;
@@ -17,6 +11,10 @@ namespace Flipbox\Relay\Helpers;
 use Flipbox\Skeleton\Helpers\ObjectHelper;
 use Relay\MiddlewareInterface;
 
+/**
+ * @author Flipbox Factory <hello@flipboxfactory.com>
+ * @since 2.0.0
+ */
 class RelayHelper
 {
 
@@ -35,7 +33,7 @@ class RelayHelper
             }
 
             return ObjectHelper::create(
-                $config, 'Relay\MiddlewareInterface'
+                $config, MiddlewareInterface::class
             );
 
         };

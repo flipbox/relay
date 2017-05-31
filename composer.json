@@ -1,7 +1,7 @@
 {
-  "name": "flipbox/relay",
+  "name": "flipboxdigital/relay",
   "description": "Relay",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "keywords": [
     "relay",
     "flipbox",
@@ -15,19 +15,44 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
-    "flipbox/skeleton": "~1.0.0",
-    "relay/relay": "~1.0.0"
+    "php": ">=7.0",
+    "flipboxdigital/skeleton": "^2.0",
+    "psr/log": "^1.0.1",
+    "relay/relay": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.0",
+    "squizlabs/php_codesniffer": "^2.0"
   },
   "autoload": {
     "psr-4": {
       "Flipbox\\Relay\\": "src/"
+    },
+    "files": [
+      "src/Helpers/RelayHelper.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Flipbox\\Relay\\Tests\\": "tests/src/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
     }
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/FlipboxFactory/Skeleton.git"
+      "type": "composer",
+      "url": "https://packagist.org"
+    },
+    {
+      "type": "path",
+      "url": "../Skeleton"
     }
   ]
 }

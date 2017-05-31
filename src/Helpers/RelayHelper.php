@@ -28,7 +28,8 @@ class RelayHelper
                 return $config;
             }
             return ObjectHelper::create(
-                $config, MiddlewareInterface::class
+                $config,
+                MiddlewareInterface::class
             );
         };
     }

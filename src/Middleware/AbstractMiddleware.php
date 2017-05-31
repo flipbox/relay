@@ -27,7 +27,9 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
     {
         // Log
         $this->debug(
-            sprintf("Begin '%s' Middleware", get_class($this)
+            sprintf(
+                "Begin '%s' Middleware",
+                get_class($this)
             )
         );
     }

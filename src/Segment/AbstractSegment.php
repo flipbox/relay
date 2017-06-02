@@ -109,19 +109,14 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
         }
 
         try {
-
             // Relay runner
             $runner = new Runner(
                 $this->getSegments(),
                 RelayHelper::createResolver()
             );
-
             return $runner(new Request(), new Response());
-
         } catch (\Exception $e) {
-
             return $this->handleException($e);
-
         }
     }
 

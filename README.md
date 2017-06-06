@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/flipbox/relay/master.svg?style=flat-square)](https://travis-ci.org/flipbox/relay)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/flipbox/relay.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/relay/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/flipbox/relay.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/relay)
-[![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/relay.svg?style=flat-square)](https://packagist.org/packages/league/relay)
+[![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/relay.svg?style=flat-square)](https://packagist.org/packages/flipboxdigital/relay)
 
 This package provides a Cache Http Middleware leveraging [Stash](https://github.com/tedious/Stash).
 

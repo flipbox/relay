@@ -27,4 +27,20 @@ interface SegmentInterface
      * @return ResponseInterface
      */
     public function __invoke(array $config = []): ResponseInterface;
+
+    /**
+     * @param string $key
+     * @param $segment
+     * @param string|null $afterKey
+     * @return mixed
+     */
+    public function addAfter(string $key, $segment, string $afterKey = null);
+
+    /**
+     * @param string $key
+     * @param $segment
+     * @param string|null $afterKey
+     * @return mixed
+     */
+    public function addBefore(string $key, $segment, string $afterKey = null);
 }

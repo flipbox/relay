@@ -23,6 +23,11 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
 
     use AutoLoggerTrait;
 
+    /**
+     * @var array
+     */
+    public $successCodes = [200, 201, 204];
+
     public function __invoke(
         RequestInterface $request,
         ResponseInterface $response,
@@ -43,7 +48,7 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
      */
     protected function isResponseSuccessful(ResponseInterface $response)
     {
-        if (in_array($response->getStatusCode(), [200, 201, 204])) {
+        if (in_array($response->getStatusCode(), $this->successCodes)) {
             return true;
         }
 

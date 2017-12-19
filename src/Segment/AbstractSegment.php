@@ -103,7 +103,6 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
      * @inheritdoc
      */
     public function run(
-        array $config = [],
         RequestInterface $request = null,
         ResponseInterface $response = null
     ): ResponseInterface {
@@ -184,8 +183,10 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
     /**
      * @inheritdoc
      */
-    public function __invoke(array $config = []): ResponseInterface
-    {
-        return $this->run($config);
+    public function __invoke(
+        RequestInterface $request = null,
+        ResponseInterface $response = null
+    ): ResponseInterface {
+        return $this->run($request, $response);
     }
 }

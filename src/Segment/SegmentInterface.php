@@ -8,6 +8,7 @@
 
 namespace Flipbox\Relay\Segments;
 
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -17,16 +18,18 @@ use Psr\Http\Message\ResponseInterface;
 interface SegmentInterface
 {
     /**
-     * @param array $config
+     * @param RequestInterface|null $request
+     * @param ResponseInterface|null $response
      * @return ResponseInterface
      */
-    public function run(array $config = []): ResponseInterface;
+    public function run(RequestInterface $request = null, ResponseInterface $response = null): ResponseInterface;
 
     /**
-     * @param array $config
+     * @param RequestInterface|null $request
+     * @param ResponseInterface|null $response
      * @return ResponseInterface
      */
-    public function __invoke(array $config = []): ResponseInterface;
+    public function __invoke(RequestInterface $request = null, ResponseInterface $response = null): ResponseInterface;
 
     /**
      * @param string $key

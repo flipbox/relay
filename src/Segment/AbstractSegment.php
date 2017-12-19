@@ -14,6 +14,7 @@ use Flipbox\Skeleton\Helpers\ArrayHelper;
 use Flipbox\Skeleton\Helpers\ObjectHelper;
 use Flipbox\Skeleton\Logger\AutoLoggerTrait;
 use Flipbox\Skeleton\Object\AbstractObject;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Relay\Runner;
 use Zend\Diactoros\Request;
@@ -101,8 +102,11 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
     /**
      * @inheritdoc
      */
-    public function run(array $config = []): ResponseInterface
-    {
+    public function run(
+        array $config = [],
+        RequestInterface $request = null,
+        ResponseInterface $response = null
+    ): ResponseInterface {
         // Reconfigure?
         if (!empty($config)) {
             ObjectHelper::configure($this, $config);
@@ -114,10 +118,39 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
                 $this->getSegments(),
                 RelayHelper::createResolver()
             );
-            return $runner(new Request(), new Response());
+            return $runner(
+                $this->resolveRequest($request),
+                $this->resolveResponse($response)
+            );
         } catch (\Exception $e) {
             return $this->handleException($e);
         }
+    }
+
+    /**
+     * @param null $request
+     * @return RequestInterface
+     */
+    protected function resolveRequest($request = null): RequestInterface
+    {
+        if($request instanceof RequestInterface) {
+            return $request;
+        }
+
+        return new Request();
+    }
+
+    /**
+     * @param null $response
+     * @return ResponseInterface
+     */
+    protected function resolveResponse($response = null): ResponseInterface
+    {
+        if($response instanceof ResponseInterface) {
+            return $response;
+        }
+
+        return new Response();
     }
 
     /**

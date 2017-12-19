@@ -6,7 +6,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/flipbox/relay.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/relay)
 [![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/relay.svg?style=flat-square)](https://packagist.org/packages/flipboxdigital/relay)
 
-This package provides a Cache Http Middleware leveraging [Stash](https://github.com/tedious/Stash).
+This package introduces a 'segment' concept to [Stash](https://github.com/tedious/Stash).
 
 ## Installation
 

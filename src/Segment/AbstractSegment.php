@@ -132,7 +132,7 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
      */
     protected function resolveRequest($request = null): RequestInterface
     {
-        if($request instanceof RequestInterface) {
+        if ($request instanceof RequestInterface) {
             return $request;
         }
 
@@ -145,7 +145,7 @@ abstract class AbstractSegment extends AbstractObject implements SegmentInterfac
      */
     protected function resolveResponse($response = null): ResponseInterface
     {
-        if($response instanceof ResponseInterface) {
+        if ($response instanceof ResponseInterface) {
             return $response;
         }
 

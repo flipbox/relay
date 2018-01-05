@@ -20,14 +20,14 @@ use Relay\MiddlewareInterface;
  */
 abstract class AbstractMiddleware extends AbstractObject implements MiddlewareInterface
 {
-
     use AutoLoggerTrait;
 
     /**
-     * @var array
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param callable|null $next
+     * @return ResponseInterface|void
      */
-    public $successCodes = [200, 201, 204];
-
     public function __invoke(
         RequestInterface $request,
         ResponseInterface $response,
@@ -40,26 +40,5 @@ abstract class AbstractMiddleware extends AbstractObject implements MiddlewareIn
                 get_class($this)
             )
         );
-    }
-
-    /**
-     * @param ResponseInterface $response
-     * @return bool
-     */
-    protected function isResponseSuccessful(ResponseInterface $response)
-    {
-        if (in_array($response->getStatusCode(), $this->successCodes)) {
-            return true;
-        }
-
-        $this->getLogger()->warning(
-            "API request was not successful",
-            [
-                'code' => $response->getStatusCode(),
-                'reason' => $response->getReasonPhrase()
-            ]
-        );
-
-        return false;
     }
 }

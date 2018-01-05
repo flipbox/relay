@@ -1,6 +1,10 @@
 # Changelog
 All Notable changes to `flipboxdigital/relay` will be documented in this file
 
+## 2.2.0 - 2017-01-05
+### Removed
+- Middleware configurable response success codes as they are overreaching
+
 ## 2.1.0 - 2017-12-19
 ### Changed
 - Middleware supports configurable response success codes

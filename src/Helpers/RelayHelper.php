@@ -9,6 +9,7 @@
 namespace Flipbox\Relay\Helpers;
 
 use Flipbox\Skeleton\Helpers\ObjectHelper;
+use Flipbox\Skeleton\Exceptions\InvalidConfigurationException;
 use Relay\MiddlewareInterface;
 
 /**
@@ -17,20 +18,34 @@ use Relay\MiddlewareInterface;
  */
 class RelayHelper
 {
-
     /**
-     * @return \Closure
+     * @return \Closure|MiddlewareInterface
      */
     public static function createResolver()
     {
         return function ($config) {
-            if ($config instanceof MiddlewareInterface) {
+            if (static::isValidMiddleware($config)) {
                 return $config;
             }
-            return ObjectHelper::create(
-                $config,
-                MiddlewareInterface::class
+
+            $config = ObjectHelper::create(
+                $config
             );
+
+            if (!static::isValidMiddleware($config)) {
+                throw new InvalidConfigurationException("Unable to resolve middleware");
+            }
+
+            return $config;
         };
+    }
+
+    /**
+     * @param $middleware
+     * @return bool
+     */
+    public static function isValidMiddleware($middleware): bool
+    {
+        return is_callable($middleware) || $middleware instanceof MiddlewareInterface;
     }
 }

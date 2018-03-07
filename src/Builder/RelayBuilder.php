@@ -8,7 +8,7 @@
 
 namespace Flipbox\Relay\Builder;
 
-use Flipbox\Relay\Salesforce\Runner;
+use Flipbox\Relay\Runner\Runner;
 use Flipbox\Skeleton\Helpers\ArrayHelper;
 use Flipbox\Skeleton\Logger\AutoLoggerTrait;
 use Flipbox\Skeleton\Object\AbstractObject;

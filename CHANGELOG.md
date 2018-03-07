@@ -3,7 +3,12 @@ All Notable changes to `flipboxdigital/relay` will be documented in this file
 
 ## Unreleased
 ### Changed
-- RelayHelper::createResolver accepts a callable as valid middleware
+- new Runner which will auto resolve a Request/Response when invoked
+- new RelayBuilder and RelayBuilderInterface to facilitate distributed composition of a relay
+
+### Removed
+- The concept of 'segment' as it's served the purpose of a middleware 'builder'.
+- RelayHelper as the logic now resides within the RelayBuilder
 
 ## 2.2.0 - 2017-01-05
 ### Removed

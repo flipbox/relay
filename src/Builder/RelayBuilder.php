@@ -75,7 +75,7 @@ class RelayBuilder extends AbstractObject implements RelayBuilderInterface
      */
     public function merge(string $key, array $middleware)
     {
-        if (array_key_exists($key, $this->middleware)) {
+        if (false === array_key_exists($key, $this->middleware)) {
             $this->middleware[$key] = $middleware;
             return $this;
         }

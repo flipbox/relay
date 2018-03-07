@@ -1,14 +1,14 @@
 # Changelog
 All Notable changes to `flipboxdigital/relay` will be documented in this file
 
-## Unreleased
+## 3.0.0 - 2018-03-06
 ### Changed
 - new Runner which will auto resolve a Request/Response when invoked
 - new RelayBuilder and RelayBuilderInterface to facilitate distributed composition of a relay
 
 ### Removed
-- The concept of 'segment' as it's served the purpose of a middleware 'builder'.
-- RelayHelper as the logic now resides within the RelayBuilder
+- The concept of 'segment' as it serves the purpose of a middleware 'builder'.
+- RelayHelper class as the logic now resides within the RelayBuilder
 
 ## 2.2.0 - 2017-01-05
 ### Removed

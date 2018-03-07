@@ -1,7 +1,7 @@
 {
   "name": "flipboxdigital/relay",
   "description": "Relay",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "keywords": [
     "relay",
     "flipbox",
@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": ">=7.0",
-    "flipboxdigital/skeleton": "^2.0.1",
+    "flipboxdigital/skeleton": "~2.0.1",
     "psr/log": "^1.0.1",
     "relay/relay": "^1.0",
     "zendframework/zend-diactoros": "^1.4"
@@ -28,18 +28,12 @@
   "autoload": {
     "psr-4": {
       "Flipbox\\Relay\\": "src/"
-    },
-    "files": [
-      "src/Helpers/RelayHelper.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
       "Flipbox\\Relay\\Tests\\": "tests/src/"
     }
-  },
-  "config": {
-    "optimize-autoloader": true
   },
   "extra": {
     "branch-alias": {

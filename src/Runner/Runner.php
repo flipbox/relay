@@ -13,8 +13,8 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\InvalidArgumentException;
 use Relay\MiddlewareInterface;
-use Zend\Diactoros\Request;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Request;
+use Laminas\Diactoros\Response;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
@@ -39,8 +39,8 @@ class Runner
      *
      * Calls the next middleware in the queue.
      *
-     * @param RequestInterface $request The incoming request.
-     * @param ResponseInterface $response The outgoing response.
+     * @param RequestInterface|null $request The incoming request.
+     * @param ResponseInterface|null $response The outgoing response.
      * @return ResponseInterface
      */
     public function __invoke(RequestInterface $request = null, ResponseInterface $response = null)

@@ -1,6 +1,10 @@
 # Changelog
 All Notable changes to `flipboxdigital/relay` will be documented in this file
 
+## 4.0.0 - 2023-01-20
+### Changed
+- Updated dependencies: `zendframework/zend-diactoros` to `laminas/laminas-diactoros`
+
 ## 3.0.0 - 2018-03-06
 
 ### Changed

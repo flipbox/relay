@@ -2,6 +2,9 @@
 All Notable changes to `flipboxdigital/relay` will be documented in this file
 
 ## 4.0.0 - 2023-01-20
+### Added
+- Support for PHP 8
+
 ### Changed
 - Updated dependencies: `zendframework/zend-diactoros` to `laminas/laminas-diactoros`
 

@@ -11,7 +11,6 @@ namespace Flipbox\Relay\Runner;
 use Flipbox\Skeleton\Helpers\ObjectHelper;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Log\InvalidArgumentException;
 use Relay\MiddlewareInterface;
 use Laminas\Diactoros\Request;
 use Laminas\Diactoros\Response;
@@ -81,17 +80,13 @@ class Runner
             return $middleware;
         }
 
-        try {
-            /** @var callable|MiddlewareInterface $middleware */
-            $middleware = ObjectHelper::create(
-                $middleware
-            );
-        } catch (\Exception $e) {
-            throw new InvalidArgumentException($e->getMessage());
-        }
+        /** @var callable|MiddlewareInterface $middleware */
+        $middleware = ObjectHelper::create(
+            $middleware
+        );
 
         if (!$this->isMiddleware($middleware)) {
-            throw new InvalidArgumentException("Unable to resolve middleware");
+            throw new \Exception("Unable to resolve middleware");
         }
 
         return $middleware;

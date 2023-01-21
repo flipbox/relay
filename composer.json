@@ -17,7 +17,6 @@
   "require": {
     "php": ">=8.0",
     "flipboxdigital/skeleton": "~2.1",
-    "psr/log": "^1|^2|^3",
     "relay/relay": "^1.0",
     "laminas/laminas-diactoros": "^2.0"
   },

@@ -12,7 +12,6 @@ use Flipbox\Relay\Runner\Runner;
 use Flipbox\Skeleton\Helpers\ArrayHelper;
 use Flipbox\Skeleton\Logger\AutoLoggerTrait;
 use Flipbox\Skeleton\Object\AbstractObject;
-use Psr\Log\InvalidArgumentException;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
@@ -115,9 +114,6 @@ class RelayBuilder extends AbstractObject implements RelayBuilderInterface
             ]
         );
 
-        throw new InvalidArgumentException(
-            $exception->getMessage(),
-            $exception->getCode()
-        );
+        throw $exception;
     }
 }
